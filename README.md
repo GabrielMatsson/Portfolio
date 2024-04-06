@@ -22,9 +22,9 @@ Below are some of the highlights of my portfolio:
 
 Interested in collaborating or learning more about my work? Feel free to reach out:
 
-- **Email**: [email@example.com](mailto:matssongabriel@gmail.com)
+- **Email**: [matssongabriel@gmail.com](mailto:matssongabriel@gmail.com)
 - **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/gabriel-matsson/)
-- **Website**: [Your Portfolio Website](https://gabrielmatsson.github.io/Portfolio/)
+- **Website**: [Portfolio Website](https://gabrielmatsson.github.io/Portfolio/)
 
 ---
 
