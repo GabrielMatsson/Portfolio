@@ -57,6 +57,14 @@ body {
   margin: 0px;
 }
 
+body, html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0;
+  padding: 0;
+}
+
 /* Styling the header : Navigation Bar */
 
 header {
