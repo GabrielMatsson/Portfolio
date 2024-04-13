@@ -829,7 +829,7 @@ h5 {
 .contact-img {
   margin: 1rem;
   border-radius: 100%;
-  width: 200px;
+  width: 244px;
   height: 200px;
 }
 
@@ -915,6 +915,14 @@ h5 {
 }
 
 /* media queries  */
+
+@media (min-width: 880px) and (max-width: 1300px) {
+  #proj{
+    height: 460px;
+    
+  }
+  
+}
 
 @media (max-width: 991px) {
   html {
@@ -1140,7 +1148,7 @@ h5 {
 
 /* Responsive adjustments for project cards */
 @media screen and (max-width: 880px) {
-  .service .card {
+  .service .card .proj{
     margin: 10px;
     flex-basis: calc(50% - 20px); /* Adjust the card size and spacing for better fit */
   }
@@ -1206,6 +1214,13 @@ h5 {
   }
 }
 
+@media (max-width: 600px) {
+  .container {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 70px);
+    font-size: 14px;
+  }
+}
+
 @media screen and (max-width: 1351px) {
   #about .main {
     display: flex;
@@ -1215,7 +1230,7 @@ h5 {
   }
 
   #about .aboutimg {
-    max-width: 50%; /* Limit the image width to prevent enlargement */
+    max-width: 40%; /* Limit the image width to prevent enlargement */
     margin-bottom: 20px; /* Add space between the image and the text */
   }
 
@@ -1245,9 +1260,15 @@ h5 {
     display: none;
   }
 
-  .service{
+  #blogs{
     display: none;
   }
+
+  .contact-info {
+    margin-left: 10%;
+    font-size: 18px;
+  }
+
 }
 
 
@@ -1293,5 +1314,7 @@ h5 {
     height: 55%;
     margin-left: 35%;
   }
+
+  
 
 }
