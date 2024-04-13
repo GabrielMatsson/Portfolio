@@ -16,6 +16,26 @@
   /* color: #a1b2b1; */
   color: black;
   line-height: 1.6em;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #808080
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:	#D3D3D3
 }
 
 /* The Main container  */
@@ -35,6 +55,14 @@ body {
   margin: 0px;
 }
 
+body, html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0;
+  padding: 0;
+}
+
 /* Styling the header : Navigation Bar */
 
 header {
@@ -43,7 +71,7 @@ header {
 
 a {
   text-decoration: none;
-  color: #195cc8;
+  color: #00ab46;
   font-weight: bold;
 }
 
@@ -73,7 +101,7 @@ section {
 }
 
 span {
-  color: #195cc8;
+  color: #00ab46;
 }
 
 .span2 {
@@ -134,7 +162,7 @@ span {
 .menu-button::after {
   display: block;
   /* background-color: white; */
-  background-color: #195cc8;
+  background-color: #00ab46;
   position: absolute;
   height: 6px;
   width: 32px;
@@ -190,12 +218,12 @@ span {
   width: 100%;
   height: 100%;
   padding: 1rem;
-  animation: float 3s linear infinite;
+  animation: floaty 3s linear infinite;
 }
 
 /* animating the main image   */
 
-@keyframes float {
+@keyframes floaty {
   0%,
   100% {
     transform: translateY(0rem);
@@ -209,7 +237,7 @@ span {
 
 button {
   background-color: transparent;
-  color: #195cc8;
+  color: #00ab46;
   text-decoration: none;
   border: 2px solid black;
   font-weight: bold;
@@ -225,14 +253,17 @@ button {
 }
 
 .btn1 {
-  background-color: #195cc8;
+  background-color: #00ab46;
   color: white;
   border: none;
   padding: 15px 32px;
 }
 
+
+
 button:hover {
   cursor: pointer;
+  
 }
 
 /* herocontent hero section */
@@ -293,20 +324,34 @@ h3 {
 }
 
 .about img {
-  height: auto;
-  width: 430px;
+  width: 100%; 
+  max-width: 430px; 
+  height: auto; 
   border-radius: 30px;
   box-shadow: rgba(26, 24, 24, 0.25) 0px 5px 10px 2px;
+  animation: pulse 5s infinite ease-in-out;
 }
 
 .about-text {
-  width: 550px;
+  width: 100%; 
+  max-width: 550px; 
+  padding: 0 15px; 
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(0.95);
+  }
+  50% {
+      transform: scale(1);
+  }
 }
 
 /* about container */
 
 .main {
-  width: 1130px;
+  max-width: 1130px; 
+  width: 100%; 
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -318,7 +363,7 @@ h3 {
   text-transform: capitalize;
   margin-bottom: 20px;
   font-weight: bold;
-  color: #195cc8;
+  color: #00ab46;
   font-family: 'Fraunces', serif;
 }
 
@@ -336,8 +381,9 @@ h3 {
   letter-spacing: 1px;
   line-height: 28px;
   font-size: 18px;
-  margin-bottom: 45px;
+  margin-bottom: 85px;
 }
+
 
 /*
 Skills 
@@ -366,7 +412,7 @@ section .title {
   padding-bottom: 20px;
   letter-spacing: 1px;
   font-family: 'Fraunces', serif;
-  color: #195cc8;
+  color: #00ab46;
 }
 
 .skills .title::after {
@@ -456,9 +502,9 @@ section .title {
   border-radius: 5px;
   vertical-align: middle;
   align-self: center;
-  background-image: -moz-linear-gradient(0deg, #3a6dc1 0%, #195cc8 100%);
-  background-image: -webkit-linear-gradient(0deg, #3a6dc1 0%, #195cc8 100%);
-  color: #195cc8;
+  background-image: -moz-linear-gradient(0deg, #3a6dc1 0%, #00ab46 100%);
+  background-image: -webkit-linear-gradient(0deg, #3a6dc1 0%, #00ab46 100%);
+  color: #00ab46;
 }
 
 .skills-content .right .mern::before {
@@ -518,7 +564,7 @@ section .title {
   text-align: center;
   font-weight: bold;
   font-size: 50px;
-  color: #195cc8;
+  color: #00ab46;
   font-family: 'Fraunces', serif;
 }
 
@@ -633,7 +679,7 @@ section .title {
   margin: 30px auto;
   text-align: center;
   font-weight: 500;
-  color: #195cc8;
+  color: #00ab46;
   font-family: 'Fraunces', serif;
 }
 
@@ -696,7 +742,7 @@ section .title {
 
 h5 {
   flex: 2;
-  color: #195cc8;
+  color: #00ab46;
   font-size: 23px;
   margin-bottom: 15px;
 }
@@ -710,13 +756,13 @@ h5 {
 
 .card .button {
   background-color: transparent;
-  color: #195cc8;
+  color: #00ab46;
   text-decoration: none;
   border: 2px solid black;
   font-weight: bold;
   padding: 9px 22px;
   border-radius: 30px;
-  transition: 0.4s;
+  transition: 0.4s; 
 }
 
 .card .button:hover {
@@ -724,6 +770,9 @@ h5 {
   border: 2px solid #249f9f;
   cursor: pointer;
 }
+
+
+
 
 
 
@@ -838,7 +887,7 @@ h5 {
   text-align: center;
   font-size: 50px;
   font-weight: 500;
-  color: #195cc8;
+  color: #00ab46;
   font-family: 'Fraunces', serif;
 }
 
@@ -850,7 +899,7 @@ h5 {
 }
 
 #social_icon_footer .social {
-  color: #195cc8;
+  color: #00ab46;
   font-size: 30px;
   padding: 1rem;
 }
@@ -925,7 +974,7 @@ h5 {
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    z-index: 2;
+    z-index: 200;
   }
   .menu li:hover {
     transform: scale(1);
@@ -1113,8 +1162,11 @@ h5 {
 
 @media screen and (max-width: 480px) {
   .service .card {
-    flex-basis: calc(100% - 150px); /* Ensure cards are full width for very small devices */
-    margin: 20px 20px; /* Adjust margin for vertical spacing */
+    flex-basis: calc(100% - 300px); /* Ensure cards are full width for very small devices */
+  }
+
+  main, .about {
+    box-sizing: content-box;
   }
 }
 
@@ -1185,6 +1237,61 @@ h5 {
 /* Adjustments for smaller screens to maintain performance and compatibility */
 @media screen and (max-width: 768px) {
   .parallax {
-    background-attachment: scroll; /* Change to scroll to prevent potential performance issues on mobile */
+    background-attachment: scroll;  /*Change to scroll to prevent potential performance issues on mobile */
+    max-width: 90%;
+    margin-left: 5%;
   }
+  #webbu {
+    display: none;
+  }
+
+  .service{
+    display: none;
+  }
+}
+
+
+
+
+
+/* Styling the hero image */
+
+.unibild {
+  flex: 1 1 30rem;
+}
+
+.unibild {
+  width: 8%;
+  height: 8%;
+  animation: floatx 4s linear infinite;
+  margin-left: 45%;
+}
+
+/* animating the main image   */
+
+@keyframes floatx {
+  0%,
+  100% {
+    transform: translatex(0rem);
+  }
+  50% {
+    transform: translatex(5rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .unibild {
+    width: 15%;
+    height: 15%;
+    margin-left: 40%;
+  }
+}
+
+@media screen and (max-width: 480) {
+  .unibild {
+    width: 55%;
+    height: 55%;
+    margin-left: 35%;
+  }
+
 }
