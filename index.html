@@ -16,11 +16,26 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+
+
     <style>
         .owl-carousel .owl-item {
             transition: opacity 0.5s ease-in-out; /* Add transition effect */
         }
     </style>
+
+    <script>
+        console.log('SmoothScroll script is running');
+        SmoothScroll({
+        animationTime: 800,
+        stepSize: 10,
+        keyboardSupport: true,
+        // Acceleration
+        accelerationDelta : 40,  
+        accelerationMax   : 2,   
+        });
+    </script>
 </head>
 
 <body>
@@ -85,9 +100,25 @@
                     // Add a click event listener to the Resume button
                     resumeButton.addEventListener('click', function() {
                         // Download the resume file
-                        window.open('Gabriel Matsson CV ENG.pdf', '_blank');
+                        window.open('Gabriel_Matsson_CV_2024.pdf', '_blank');
                     });
                 </script>
+
+                <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
 
 
             </div>
@@ -101,7 +132,7 @@
         
               
         <!----About section start---->
-        <section class="about" id="about">
+        <section class="about fade-in" id="about">
             <div class="main">
                 <img src="images/prof.PNG" class="aboutimg">
                 <div class="about-text">
@@ -120,7 +151,13 @@
                 <div class="CV-grid-column">
                     <div class="CV-jobs">
                         <h2 class="CV-secondary heading CV-jobs-heading">Experience</h2>
-                        <section class="CV-timeline CV-job">
+                        <section class="CV-timeline CV-job experience-entry fade-in">
+                            <h3 class="CV-timeline-heading"><span class="CV-timeline-heading-title">Student Ambassador</span>&#8211; <span class="CV-timeline-heading-location">Ericsson</span><small class="CV-timeline-heading-duration">July 2024 - Ongoing</small></h3>
+                            <ul class="CV-timeline-details">
+                                <li class="CV-job-timeline-item">Im currently representing XLENT Consulting Group, acting as a bridge between the students and XLENT</li>
+                            </ul>
+                        </section>
+                        <section class="CV-timeline CV-job experience-entry fade-in">
                             <h3 class="CV-timeline-heading"><span class="CV-timeline-heading-title">Summer Internship </span>&#8211; <span class="CV-timeline-heading-location">Ericsson</span><small class="CV-timeline-heading-duration">June 2022 - August 2022</small></h3>
                             <ul class="CV-timeline-details">
                                 <li class="CV-job-timeline-item">Full-stack development for an internal development tool at Radio Software Lab department. I was collaborating with five other summer interns who were working together on the same project.</li>
@@ -128,7 +165,7 @@
                                 <li class="CV-job-timeline-item">Our team leader underestimated what we could achieve and we finished the work in two weeks which he thought would take the whole summer.</li>
                             </ul>
                         </section>
-                        <section class="CV-timeline CV-job">
+                        <section class="CV-timeline CV-job experience-entry fade-in">
                             <h3 class="CV-timeline-heading"><span class="CV-timeline-heading-title">Technical Intern </span>&#8211; <span class="CV-timeline-heading-location">Ericsson</span><small class="CV-timeline-heading-duration">Januari 2020 - May 2020</small></h3>
                             <ul class="CV-timeline-details">
                                 <li class="CV-timeline-details-item">Worked with development and testing of an internal test system software. I was part of a team of four and my main task was debugging bugs that occurred following the upgrade from an older version of Python to Python 3.0.</li>
@@ -145,33 +182,32 @@
 
         <!-- Projects section -->
 
-        <div class="service" id="projects">
+        <div class="service fade-in" id="projects">
             <div class="title">
-                <h2 class="project-heading">Github Projects</h2>
+                <h2 class="project-heading">Volunteer work</h2>
             </div>
 
             <div class="box">
                 <div class="card" id="proj">                   
-                    <h5>D-sektionen website</h5>   
+                    <h5>Datateknologsektionen</h5>   
                     <div class="pra">
-                        <p>I did after school volunteer work in WebbU and my role was Admin. As an Admin, you are part of the Web Team and responsible for ensuring that the section's digital systems are operational and equipped with the features needed by the section. The digital systems of the section include, among other things, the section's website and member page. Admin duties involve working with full-stack development, both backend and frontend.                 
-                            <br>Checkout the website here: <a href="https://d-sektionen.se/">D-sektionen</a>
+                        <p>I was apart of the Web Team and responsible for ensuring that the section's digital systems are operational and equipped with the features needed by the section. The digital systems of the section include, among other things, the section's website and member page. Admin duties involve working with full-stack development, both backend and frontend.                 
+                            <br><br>Checkout the website here: <a href="https://d-sektionen.se/">D-sektionen</a>
                         </p>
                         
-                        <p style="text-align: center;">
-                            <a class="button" href="https://github.com/d-sektionen">Check Repo</a>
-                        </p>
+                        
                     </div>  
                                                
                 </div>
 
                 <div class="card" id="proj">
-                    <h5>Reddit filter</h5>
+                    <h5>Fullstack Web Developer | Kårservice</h5>
                     <div class="pra">
-                        <p> With 3 class mates in the course TDDD35 Large-Scale Distributed Systems and Networks, we created a Reddit filter that filters out all the posts that contain profanity so that we could analyzes the usage of profanity in diffrent subreddits. The filter is a simple example of how to use the PRAW library to interact with the Reddit API and how to filter out posts based on certain criteria. 
-
-                        <p style="text-align: center;">
-                            <a class="button" href="#">Check Repo</a>
+                        <p>MF Kårhouse is the in-house agency of Kårservice. Kårservice is the company behind the operations of the student union buildings, and it is MF Kårhouse that creates the marketing. 
+                        <br> 
+                        <br>As a web developer, one develops and maintains 8 different websites, all of which are WordPress-based.
+                        <br><br>Checkout the website here: <a href="https://karservice.se/">Kårservice</a>
+                            
                         </p>
                     </div>
                 </div>
@@ -182,7 +218,7 @@
         
 
         <!-- skills section start -->
-        <section class="skills" id="skills">
+        <section class="skills fade-in" id="skills">
             <div class="max-width">
                 <h2 class="title">Coding Skills</h2>
                 <div class="skills-content">
@@ -252,7 +288,7 @@
         <div class="parallax" id="webbu" style="background-image: url('images/webbu2.PNG');"></div>
 
         <!-- Courses section starts  -->
-        <div class="service" id="blogs">
+        <div class="service fade-in" id="blogs">
             <div class="title">
                 <h2 class="project-heading">University Courses</h2>
             </div>
@@ -282,7 +318,7 @@
                     });
                 });
             </script>
-            <div class="owl-carousel">
+            <div class="owl-carousel fade-in">
                     <div class="card">
                         <i class="fas fa-bars"></i>
                         <h5>Artificial Intelligence TDDC17 </h5>
@@ -389,9 +425,9 @@
                     </div>
                     
             </div>
-            <div class="unibild">
+            <!-- <div class="unibild">
                 <img src="images/unibild.svg" alt=" " />
-            </div>
+            </div> -->
         </div>
 
         <!-- Blog section ends -->
@@ -399,7 +435,7 @@
         <div class="parallax" style="background-image: url('images/micro4.png');"></div>
 
         <!-- contact us section starts  -->
-        <section class="contact" id="contact">
+        <section class="contact fade-in" id="contact">
 
             <h2 class="contactTitle">Contact Me</h2>
             <div class="container contactUs">
@@ -453,6 +489,53 @@
     </div>
 
 
-</body>
+
+    <script>
+        // Fade-in animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+    </script>
+    <!-- smooth scrolling for older browsers-->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    
+        // Fade-in animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+    
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+    
+    </body>
+    
 
 </html>

@@ -48,6 +48,7 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -318,7 +319,7 @@ h3 {
 
 .about {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding: 150px 0px;
   background-color: #e8e9e3;
 }
@@ -356,6 +357,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-around;
+   background-color: #e8e9e3;
 }
 
 .about-text h2 {
@@ -548,12 +550,14 @@ section .title {
 
 .CV-page {
   max-width: 800px;
-  height: 100vh;
+  min-height: 100vh;
+  overflow: auto;
   margin: 0 auto;
   padding: 0 2em;
   color: #222222;
   font-size: 1em;
   font-family: 'Lato', sans-serif;
+  margin-top: 13%;
 }
 
 .CV-secondaryHeading {
@@ -671,7 +675,47 @@ section .title {
   background-color: rgb(232, 233, 227);
   width: 100%;
   padding: 100px 0px;
-  height: 100vh;
+  height: 110%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px; /* Adjusts spacing between cards */
+}
+
+@media (max-width: 1000px) {
+  .service {
+    height: 140%;
+  }
+}
+
+
+
+
+.service .card {
+  flex-basis: calc(33.333% - 20px); /* Three cards per row by default, minus gap */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s; /* Smooth scaling on hover */
+}
+
+.service .card:hover {
+  transform: scale(1.05); /* Slightly enlarge card on hover */
+}
+
+/* Responsive adjustments */
+
+/* For tablets */
+@media (max-width: 768px) {
+  .service .card {
+    flex-basis: calc(50% - 20px); /* Two cards per row */
+    height: 180%;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .service .card {
+    flex-basis: 100%; /* One card per row */
+  }
 }
 
 .title h2 {
@@ -716,7 +760,6 @@ section .title {
 }
 
 .card {
-  height: 365px;
   padding: 20px 35px;
   background-color: rgb(232, 233, 227);
   border-radius: 20px;
@@ -729,6 +772,7 @@ section .title {
   flex-direction: column;
   align-items: center;
   box-sizing: inherit;
+  height: 100%;
 }
 
 
@@ -896,6 +940,7 @@ h5 {
 #social_icon_footer {
   background-color: #dedede;
   text-align: center;
+  margin-top:5%;
 }
 
 #social_icon_footer .social {
@@ -916,13 +961,6 @@ h5 {
 
 /* media queries  */
 
-@media (min-width: 880px) and (max-width: 1300px) {
-  #proj{
-    height: 460px;
-    
-  }
-  
-}
 
 @media (max-width: 991px) {
   html {
@@ -1318,3 +1356,38 @@ h5 {
   
 
 }
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.25, 0.05, 0.25, 1);
+}
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Staggered fade-in for experience entries */
+.experience-entry:nth-child(1) {
+  transition-delay: 10s;
+}
+.experience-entry:nth-child(2) {
+  transition-delay: 0s;
+}
+.experience-entry:nth-child(3) {
+  transition-delay: 0.5s;
+}
+
+/* Button hover effects */
+.btn1:hover, .btn2:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Image zoom effect */
+.image img:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+}
+
+
